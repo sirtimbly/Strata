@@ -1,0 +1,22 @@
+{
+	"name": "IsoComponents",
+	"version": "0.0.1",
+	"description": "Component Web Example Implementation",
+	"authors": [
+		"SirTimbly"
+	],
+	"license": "MIT",
+	"private": true,
+	"ignore": [
+		"**/.*",
+		"node_modules",
+		"bower_components",
+		"test",
+		"tests"
+	],
+	"dependencies": {
+		"foundation5-sass": "*",
+		"backbone": "*",
+		"marionette": "*"
+	}
+}
