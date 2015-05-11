@@ -7,12 +7,18 @@ using UiStratum;
 
 namespace IsoComponents.Helpers
 {
-	public static class UiStratumHelpers
+	public static class StratumHelpers
 	{
-		public static string RenderComponent(this HtmlHelper helper, string name, object data = null)
+		public static MvcHtmlString Stratum(this HtmlHelper helper, string name, object data = null, bool withScripts = false)
 		{
 			UiStratum.UiStratum component = new UiStratum.UiStratum(name, "", "", data, new UiStratum.UiStratumTypes.BackboneMustacheStratumType());
-			return component.RenderComponentHtml(true, true, true);
+			return MvcHtmlString.Create(component.RenderComponentHtml(true, withScripts, true));
+		}
+
+		public static MvcHtmlString StratumScripts(this HtmlHelper helper, string name)
+		{
+			UiStratum.UiStratum component = new UiStratum.UiStratum(name, "", "", null, new UiStratum.UiStratumTypes.BackboneMustacheStratumType());
+			return MvcHtmlString.Create(component.RenderBundleScripts(false));
 		}
 	}
 }

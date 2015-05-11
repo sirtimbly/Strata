@@ -324,7 +324,13 @@
     <Content Include="bower_components\marionette\license.txt" />
     <Content Include="bower_components\underscore\.gitignore" />
     <Content Include="bower_components\underscore\underscore.js" />
-    <Content Include="Components\banner\banner.js" />
+    <Content Include="Components\banner\banner.css">
+      <DependentUpon>banner.scss</DependentUpon>
+    </Content>
+    <Content Include="Components\banner\banner.view.js" />
+    <Content Include="Components\banner\banner.min.css">
+      <DependentUpon>banner.css</DependentUpon>
+    </Content>
     <Content Include="Content\bootstrap.css" />
     <Content Include="Content\bootstrap.min.css" />
     <Content Include="favicon.ico" />
@@ -427,6 +433,10 @@
     <Content Include="bower_components\underscore\package.json" />
     <Content Include="bower_components\underscore\README.md" />
     <Content Include="Components\banner\component.json" />
+    <Content Include="Components\banner\banner.scss" />
+    <Content Include="Components\banner\banner.css.map">
+      <DependentUpon>banner.css</DependentUpon>
+    </Content>
     <None Include="Scripts\jquery-1.10.2.intellisense.js" />
     <Content Include="Scripts\jquery-1.10.2.js" />
     <Content Include="Scripts\jquery-1.10.2.min.js" />
@@ -446,7 +456,9 @@
     <Content Include="Web.Release.config">
       <DependentUpon>Web.config</DependentUpon>
     </Content>
-    <Content Include="Views\Web.config" />
+    <Content Include="Views\Web.config">
+      <SubType>Designer</SubType>
+    </Content>
     <Content Include="Views\_ViewStart.cshtml" />
     <Content Include="Views\Shared\Error.cshtml" />
     <Content Include="Views\Shared\_Layout.cshtml" />

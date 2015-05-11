@@ -1,1 +1,12 @@
-﻿
+﻿{
+
+	"name": "banner",
+	"version": "1",
+	"components": [ ],
+	"scripts": [
+	
+	],
+	"styles": [ 
+		
+	]
+}

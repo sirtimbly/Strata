@@ -104,13 +104,29 @@ namespace UiStratum
 
 			_modelData = modelData;
 
-			string componentFile = HttpContext.Current.Server.MapPath(_t.RootPath + _componentName + "/" + _t.DepsFile);
-			_dependencies = JsonConvert.DeserializeObject<ComponentDependencies>(File.ReadAllText(componentFile));
-			_templateFilePath = ConstructFilePath(_componentName, _t.TemplateExtension);
+			try
+			{
+				string componentFile = HttpContext.Current.Server.MapPath(_t.RootPath + _componentName + "/" + _t.DepsFile);
+				_dependencies = JsonConvert.DeserializeObject<ComponentDependencies>(File.ReadAllText(componentFile));
+				_templateFilePath = ConstructFilePath(_componentName, _t.TemplateExtension);
 
-			ExtractDependencies();
-			UpdateScriptsBundle(_dependentScriptPaths.ToArray());
-			UpdateTemplatesCache(_dependentTemplatePaths.ToArray());
+			}
+			catch (Exception ex)
+			{
+				
+				throw new Exception(String.Format("Something went wrong finding the component '{0}'. Did you give me the right component name? \n {1}", _componentName, ex.InnerException));
+			}
+
+			if (_dependencies != null)
+			{
+			   
+			   
+				ExtractDependencies();
+				UpdateScriptsBundle(_dependentScriptPaths.ToArray());
+				UpdateTemplatesCache(_dependentTemplatePaths.ToArray());
+			}
+			
+			
 
 		}
 
@@ -210,24 +226,38 @@ namespace UiStratum
 
 		public string RenderBundleScripts(bool refresh = false)
 		{
+			string scriptTag = "<script src=\"{0}\" type=\"text/javascript\"></script>";
 			if (refresh)
 				UpdateScriptsBundle(_dependentScriptPaths.ToArray());
 
-			return "<script src=\"" + HttpUtility.HtmlAttributeEncode(BundleTable.Bundles.ResolveBundleUrl(_virtualBundlePath)) + "\"></script>";
+		//	return "@Scripts.Render(" + _virtualBundlePath + ");";
+			if (HttpContext.Current.IsDebuggingEnabled)
+			{
+				StringBuilder sb = new StringBuilder();
+				foreach (var item in _dependentScriptPaths)
+				{
+					sb.AppendFormat(scriptTag, HttpUtility.HtmlAttributeEncode(item.Substring(1)));
+				}
+				return sb.ToString();
+			}
+
+			return String.Format(scriptTag, HttpUtility.HtmlAttributeEncode(BundleTable.Bundles.ResolveBundleUrl(_virtualBundlePath)));
 
 		}
 
 		public string RenderAllTemplates(bool refresh = false, bool remote = false)
 		{
 			string result = "";
-			if (refresh || String.IsNullOrWhiteSpace(HttpContext.Current.Cache.Get(_componentName).ToString()))
+			if (refresh)
 			{
 				UpdateTemplatesCache(_dependentTemplatePaths.ToArray());
 			}
 
-
-			result = HttpContext.Current.Cache.Get(_componentName).ToString();
-
+			if (HttpContext.Current.Cache.Get(_componentName) != null)
+			{
+				result = HttpContext.Current.Cache.Get(_componentName).ToString();
+			}
+			
 
 			if (remote)
 			{
@@ -243,33 +273,43 @@ namespace UiStratum
 		/// <returns></returns>
 		private void ExtractDependencies()
 		{
-
-			//Local script dependencies first
-			List<string> flattenedScripts = _dependencies.Scripts.ToList<string>();
+		   
 			List<string> flattenedTemplates = new List<string>();
+			if (_dependencies.Scripts.Any())
+			{
+				//Local script dependencies first
+				_dependentScriptPaths = _dependencies.Scripts.ToList<string>();
+			}
 
-
-			//then the .view.js file as an unresolved path
-			flattenedScripts.Add(_t.RootPath + _componentName + "/" + _componentName + _t.ViewSuffix);
+			
+			//then add the [component].view.js file as an unresolved path
+			_dependentScriptPaths.Add(_t.RootPath + _componentName + "/" + _componentName + _t.ViewSuffix);
 			flattenedTemplates.Add(_templateFilePath);
 
+			if (!_dependencies.Components.Any())
+			{
+				return;
+			}
 			//now the nested dependencies
 			foreach (string name in _dependencies.Components)
 			{
 				var nestedComponent = new UiStratum(name);
-				flattenedScripts.AddRange(nestedComponent.DependentScriptPaths);
+				_dependentScriptPaths.AddRange(nestedComponent.DependentScriptPaths);
 				flattenedTemplates.AddRange(nestedComponent.DependentTemplatePaths);
-			} 
-			flattenedScripts = flattenedScripts.Distinct().ToList();
+			}
+			_dependentScriptPaths = _dependentScriptPaths.Distinct().ToList();
 			flattenedTemplates = flattenedTemplates.Distinct().ToList();
 
-			_dependentScriptPaths.AddRange(flattenedScripts);
 			_dependentTemplatePaths.AddRange(flattenedTemplates);
 
 		}
 
 		private void UpdateScriptsBundle(string[] additionalPaths)
 		{
+			if (!additionalPaths.Any())
+			{
+				return;
+			}
 			Bundle bundle = BundleTable.Bundles.GetBundleFor(_virtualBundlePath);
 			if (bundle == null)
 			{
@@ -288,6 +328,10 @@ namespace UiStratum
 
 		private void UpdateTemplatesCache(string[] filePaths)
 		{
+			if (!filePaths.Any())
+			{
+				return;
+			}
 			StringBuilder allTemplates = new StringBuilder();
 			foreach (string filePath in _dependentTemplatePaths)
 			{
@@ -296,7 +340,7 @@ namespace UiStratum
 			
 			var dataObject = allTemplates.ToString();
 			var absoluteExpiration = DateTime.UtcNow.Add(new TimeSpan(24, 0, 0));
-			HttpContext.Current.Cache.Insert(_componentName, dataObject, null, absoluteExpiration, new TimeSpan(1,0,0));
+			HttpContext.Current.Cache.Insert(_componentName, dataObject, null, absoluteExpiration, TimeSpan.Zero);
 			//_context.CustomCache.AddCache(_componentName, cacheComponent);
 		}
 

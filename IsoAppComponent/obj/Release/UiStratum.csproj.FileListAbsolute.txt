@@ -1,0 +1,14 @@
+C:\Users\tbendt\Documents\Visual Studio 2013\Projects\IsoComponents\IsoAppComponent\bin\Release\IsoAppComponent.dll.config
+C:\Users\tbendt\Documents\Visual Studio 2013\Projects\IsoComponents\IsoAppComponent\bin\Release\IsoAppComponent.dll
+C:\Users\tbendt\Documents\Visual Studio 2013\Projects\IsoComponents\IsoAppComponent\bin\Release\IsoAppComponent.pdb
+C:\Users\tbendt\Documents\Visual Studio 2013\Projects\IsoComponents\IsoAppComponent\bin\Release\Antlr3.Runtime.dll
+C:\Users\tbendt\Documents\Visual Studio 2013\Projects\IsoComponents\IsoAppComponent\bin\Release\Microsoft.Web.Infrastructure.dll
+C:\Users\tbendt\Documents\Visual Studio 2013\Projects\IsoComponents\IsoAppComponent\bin\Release\Newtonsoft.Json.dll
+C:\Users\tbendt\Documents\Visual Studio 2013\Projects\IsoComponents\IsoAppComponent\bin\Release\Nustache.Core.dll
+C:\Users\tbendt\Documents\Visual Studio 2013\Projects\IsoComponents\IsoAppComponent\bin\Release\System.Web.Optimization.dll
+C:\Users\tbendt\Documents\Visual Studio 2013\Projects\IsoComponents\IsoAppComponent\bin\Release\WebGrease.dll
+C:\Users\tbendt\Documents\Visual Studio 2013\Projects\IsoComponents\IsoAppComponent\bin\Release\Antlr3.Runtime.pdb
+C:\Users\tbendt\Documents\Visual Studio 2013\Projects\IsoComponents\IsoAppComponent\bin\Release\Newtonsoft.Json.xml
+C:\Users\tbendt\Documents\Visual Studio 2013\Projects\IsoComponents\IsoAppComponent\bin\Release\System.Web.Optimization.xml
+C:\Users\tbendt\Documents\Visual Studio 2013\Projects\IsoComponents\IsoAppComponent\obj\Release\IsoAppComponent.dll
+C:\Users\tbendt\Documents\Visual Studio 2013\Projects\IsoComponents\IsoAppComponent\obj\Release\IsoAppComponent.pdb
