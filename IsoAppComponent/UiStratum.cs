@@ -84,12 +84,12 @@ namespace UiStratum
 				_t.RootPath = rootPath;
 			}
 
-			//var page = HttpContext.Current.Request.Path;
-			//if (page != null && page.StartsWith("~/"))
-			//{
-			//	_virtualBundlePath = "~/bundles" + page.Substring(1);
-			//}
-			_virtualBundlePath = "~/bundles/components/" + _componentName;
+			var page = HttpContext.Current.Request.Path;
+			if (page != null && page.StartsWith("/"))
+			{
+				_virtualBundlePath = "~/bundles" + page.Substring(1);
+			}
+			//_virtualBundlePath = "~/bundles/components/" + _componentName;
 
 			if (String.IsNullOrWhiteSpace(baseId))
 			{
@@ -122,7 +122,6 @@ namespace UiStratum
 			   
 			   
 				ExtractDependencies();
-				UpdateScriptsBundle(_dependentScriptPaths.ToArray());
 				UpdateTemplatesCache(_dependentTemplatePaths.ToArray());
 			}
 			
@@ -227,8 +226,7 @@ namespace UiStratum
 		public string RenderBundleScripts(bool refresh = false)
 		{
 			string scriptTag = "<script src=\"{0}\" type=\"text/javascript\"></script>";
-			if (refresh)
-				UpdateScriptsBundle(_dependentScriptPaths.ToArray());
+		
 
 		//	return "@Scripts.Render(" + _virtualBundlePath + ");";
 			if (HttpContext.Current.IsDebuggingEnabled)
@@ -236,12 +234,30 @@ namespace UiStratum
 				StringBuilder sb = new StringBuilder();
 				foreach (var item in _dependentScriptPaths)
 				{
-					sb.AppendFormat(scriptTag, HttpUtility.HtmlAttributeEncode(item.Substring(1)));
+					sb.AppendFormat(scriptTag, HttpUtility.HtmlAttributeEncode(item));
 				}
 				return sb.ToString();
 			}
 
 			return String.Format(scriptTag, HttpUtility.HtmlAttributeEncode(BundleTable.Bundles.ResolveBundleUrl(_virtualBundlePath)));
+
+		}
+
+		public string[] ListBundleScripts(bool refresh = false)
+		{
+			List<string> result = new List<string>();
+		   
+			
+			   
+
+			StringBuilder sb = new StringBuilder();
+			foreach (var item in _dependentScriptPaths)
+			{
+				result.Add(HttpUtility.HtmlAttributeEncode(item));
+			}
+
+
+			return result.ToArray<string>();
 
 		}
 
@@ -304,27 +320,7 @@ namespace UiStratum
 
 		}
 
-		private void UpdateScriptsBundle(string[] additionalPaths)
-		{
-			if (!additionalPaths.Any())
-			{
-				return;
-			}
-			Bundle bundle = BundleTable.Bundles.GetBundleFor(_virtualBundlePath);
-			if (bundle == null)
-			{
-				//var defaultPath = page + ".js";
-
-				BundleTable.Bundles.Add(new ScriptBundle(_virtualBundlePath).Include(additionalPaths));
-			}
-			else
-			{
-				//TODO: find out if bundles take care of multiple instances of the same file
-				BundleTable.Bundles.Remove(bundle);
-				bundle = bundle.Include(additionalPaths);
-				BundleTable.Bundles.Add(bundle);
-			}
-		}
+		
 
 		private void UpdateTemplatesCache(string[] filePaths)
 		{

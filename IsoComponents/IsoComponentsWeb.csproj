@@ -324,6 +324,13 @@
     <Content Include="bower_components\marionette\license.txt" />
     <Content Include="bower_components\underscore\.gitignore" />
     <Content Include="bower_components\underscore\underscore.js" />
+    <Content Include="Components\signup\signup.css">
+      <DependentUpon>signup.scss</DependentUpon>
+    </Content>
+    <Content Include="Components\signup\signup.min.css">
+      <DependentUpon>signup.css</DependentUpon>
+    </Content>
+    <Content Include="Components\signup\signup.view.js" />
     <Content Include="Components\banner\banner.css">
       <DependentUpon>banner.scss</DependentUpon>
     </Content>
@@ -437,6 +444,12 @@
     <Content Include="Components\banner\banner.css.map">
       <DependentUpon>banner.css</DependentUpon>
     </Content>
+    <Content Include="Components\signup\signup.mustache" />
+    <Content Include="Components\signup\signup.scss" />
+    <Content Include="Components\signup\signup.css.map">
+      <DependentUpon>signup.css</DependentUpon>
+    </Content>
+    <Content Include="Components\signup\component.json" />
     <None Include="Scripts\jquery-1.10.2.intellisense.js" />
     <Content Include="Scripts\jquery-1.10.2.js" />
     <Content Include="Scripts\jquery-1.10.2.min.js" />
