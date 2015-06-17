@@ -1,0 +1,63 @@
+﻿<div class="campaign-view-container">
+	<div class="campaign-ended campaign-hide">
+		<div class="campaign-ended-title">Fundraiser Ended on <span class="campaign-ended-enddate">{{displayEndDate}}</span></div>
+		<div class="campaign-ended-actions">
+			<a href="javascript:void(0)" class="button-action js-campaign-clone">Copy To New Fundraiser</a>
+		</div>
+	</div>
+	<div class="campaign-header" style="background-image: url('{{image}}');">
+		<a href="javascript:void(0)" class="js-cover-photo-edit cover-edit">Edit Cover Photo</a>
+		<div class="campaign-header-content">
+
+			<div class="header-profile">
+				<img src="{{profilePhoto}}" alt="" class="header-profile-photo header-profile-photo-active" />
+				<span class="header-profile-photo-caption">Add My Photo</span>
+			</div>
+			<div class="header-extra">
+				<div class="campaign-title js-editable edit-in-place" id="editable-title" data-editable="title">{{title}}</div>
+				<div class="user-name">{{ownerName}}</div>
+				<ul class="campaign-share-actions">
+					<li class="js-campaign-hide-tooltip" data-tooltip aria-haspopup="true">
+						<div id="donate-header-module">{{>donate}}</div>
+					</li>
+					<li>
+						<a href="javascript:void(0)" class="js-campaign-stats">Campaign Stats</a>
+					</li>
+				</ul>
+				<div class="js-social-share"></div>
+			</div>
+		</div>
+	</div>
+	<div class="campaign-content">
+		<div class="campaign-content-main">
+			<div class="campaign-headline js-editable edit-in-place" id="editable-headline" data-editable="headline">{{headline}}</div>
+			<div class="campaign-description js-editable edit-in-place has-editing-ui" id="editable-description" data-button-class="all" data-editable="description">
+				{{{description}}}
+			</div>
+			<div class="campaign-video">{{{causeData.video}}}</div>
+		</div>
+
+		<div class="campaign-content-sidebar">
+			<img src="{{causeData.logo}}" alt="{{causeData.name}}" class="sidebar-cause-logo" />
+			<span class="sidebar-cause-name">{{causeData.name}}</span>
+			<div class="sidebar-progress">
+				<div class="progress-raised"><span class="progress-raised-dollars">{{total}}</span> raised</div>
+				<div class="progress-time"><span class="progress-time-days">{{daysLeft}}</span> <a href="#" class="edit-date">Edit</a></div>
+				<div class="progress-bar" id="goal-module">{{>goal}}</div>
+			</div>
+			<div class="js-campaign-hide-tooltip sidebar-donate" data-tooltip aria-haspopup="true">
+				<div id="donate-view-module">{{>donate}}</div>
+			</div>
+			<div class="sidebar-donors">
+				<div class="sidebar-donors-title">Donors:</div>
+				<ol>
+					<li class="be-the-first"><a href="#">Be the first to donate</a></li>
+					<li></li>
+					<li></li>
+					<li></li>
+					<li></li>
+				</ol>
+			</div>
+		</div>
+	</div>
+</div>

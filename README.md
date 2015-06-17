@@ -47,6 +47,6 @@ Also, it's convenient for me because my default use case for Strata is with Back
 - Create a Nuget package.
 - Create Nuget package for MVC helper for rendering
 - Create Nuget package for WebForms usercontrols.
-
+- finish implementing component dependencies
 
 

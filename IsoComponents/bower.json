@@ -15,8 +15,14 @@
 		"tests"
 	],
 	"dependencies": {
-		"foundation5-sass": "*",
-		"backbone": "*",
-		"marionette": "*"
+		"jquery": "~2.1.4",
+		"foundation5-sass": "0.0.2",
+		"backbone": "^1.2.1",
+		"underscore": "*",
+		"underscore-strings": "~1.8.3",
+		"foundation": "~5.5.2",
+		"foundation-datepicker": "~1.3.0",
+		"backbone.modal": "*",
+		"jquery.validate": "~1.13.0"
 	}
 }

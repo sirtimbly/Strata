@@ -1,0 +1,106 @@
+﻿.campaign-share-preview  {
+
+	a {
+		 min-width:24px;
+		 min-height:24px;
+	 }
+}
+
+.view {
+	 .campaign-header-actions {
+		display:none;
+	 }
+	 .cover-edit {
+		 display:none !important;
+	 }
+	 .header-profile-photo {
+		 cursor:default !important;
+	 }
+	 .header-profile-photo-caption {
+		 display:none;
+	 }
+	 .edit-date {
+		 display:none;
+	 }
+	 .edit-goal {
+		 display:none;
+	 }
+	 .edit-in-place {
+		 border:none;
+		 box-shadow:none;
+		 background:none;
+		 &:hover {
+			 background:none; 
+			 border:none;
+		 }
+	 }
+
+	 .campaign-share-preview {
+		 display:none;
+	 }
+}
+
+.campaign-view-container {
+	@include panel($padding: 0);
+}
+
+.campaign-hide {
+	display:none;
+}
+.campaign-ended {
+	padding: rem-calc(10);
+	background:$ci-red;
+	color:$white;
+	text-align:center;
+	.campaign-ended-title {
+		font-size:1.5em;
+		font-weight:bold;
+		.campaign-ended-enddate {
+
+		}
+	}
+	.campaign-ended-actions {
+		padding:rem-calc(8);
+		.button-action {
+
+		}
+	} 
+}
+
+.campaign-complete {
+	text-align:center;
+	color:$white;
+	z-index:1000;
+	
+	p {
+		font-size:130%;
+		color:$white;
+		margin:rem-calc(20);
+	}
+
+
+	.donate {
+		padding-right:rem-calc(20);
+
+		.money{
+			float:right;
+		}
+	} 
+		
+	.followup {
+		padding-left:rem-calc(20);
+		text-align:left;
+	}
+		
+	.complete-message-header {
+		font-weight:bold;
+		color:$white;
+		font-size:150%;
+	}
+}
+
+.campaign-content, .campaign-header {
+	.has-tip, .has-tip:hover, .has-tip:focus {
+		border-bottom:none !important;
+	}
+}

@@ -1,0 +1,25 @@
+﻿{
+
+	"name": "preview",
+	"version": "1",
+	"components": [
+		"donate"
+	],
+	"scripts": [
+		"~/bower_components/underscore/underscore.js",
+		"~/bower_components/backbone/backbone.js",
+		"~/Scripts/underscore.string.js",
+		"~/Scripts/underscore.templatesettings.js",
+		"~/js/models/AdvocateCampaign.js",
+		"~/js/models/Cause.js",
+		"~/js/frameworks/foundation/foundation.tooltip.js",
+		"~/js/frameworks/backbone/backbone.modal.js",
+		"~/js/frameworks/backbone/etch.js",
+		"~/js/frameworks/jquery/plugins/jquery.validate.js",
+		"~/js/frameworks/foundation/foundation.dropdown.js"
+	],
+	"styles": [
+		""
+	],
+	"BackboneModelName":  "AdvocateCampaign"
+}

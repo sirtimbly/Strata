@@ -23,9 +23,7 @@ C:\Users\tbendt\Documents\Visual Studio 2013\Projects\IsoComponents\IsoComponent
 C:\Users\tbendt\Documents\Visual Studio 2013\Projects\IsoComponents\IsoComponents.Tests\bin\Debug\Microsoft.Owin.Security.Cookies.dll
 C:\Users\tbendt\Documents\Visual Studio 2013\Projects\IsoComponents\IsoComponents.Tests\bin\Debug\Microsoft.Owin.Host.SystemWeb.dll
 C:\Users\tbendt\Documents\Visual Studio 2013\Projects\IsoComponents\IsoComponents.Tests\bin\Debug\System.Web.Http.WebHost.dll
-C:\Users\tbendt\Documents\Visual Studio 2013\Projects\IsoComponents\IsoComponents.Tests\bin\Debug\IsoAppComponent.dll
 C:\Users\tbendt\Documents\Visual Studio 2013\Projects\IsoComponents\IsoComponents.Tests\bin\Debug\System.Net.Http.Formatting.dll
-C:\Users\tbendt\Documents\Visual Studio 2013\Projects\IsoComponents\IsoComponents.Tests\bin\Debug\Nustache.Core.dll
 C:\Users\tbendt\Documents\Visual Studio 2013\Projects\IsoComponents\IsoComponents.Tests\bin\Debug\IsoComponents.pdb
 C:\Users\tbendt\Documents\Visual Studio 2013\Projects\IsoComponents\IsoComponents.Tests\bin\Debug\Newtonsoft.Json.xml
 C:\Users\tbendt\Documents\Visual Studio 2013\Projects\IsoComponents\IsoComponents.Tests\bin\Debug\System.Web.Helpers.xml
@@ -45,7 +43,6 @@ C:\Users\tbendt\Documents\Visual Studio 2013\Projects\IsoComponents\IsoComponent
 C:\Users\tbendt\Documents\Visual Studio 2013\Projects\IsoComponents\IsoComponents.Tests\bin\Debug\Microsoft.Owin.Security.Cookies.xml
 C:\Users\tbendt\Documents\Visual Studio 2013\Projects\IsoComponents\IsoComponents.Tests\bin\Debug\Microsoft.Owin.Host.SystemWeb.xml
 C:\Users\tbendt\Documents\Visual Studio 2013\Projects\IsoComponents\IsoComponents.Tests\bin\Debug\System.Web.Http.WebHost.xml
-C:\Users\tbendt\Documents\Visual Studio 2013\Projects\IsoComponents\IsoComponents.Tests\bin\Debug\IsoAppComponent.pdb
 C:\Users\tbendt\Documents\Visual Studio 2013\Projects\IsoComponents\IsoComponents.Tests\bin\Debug\System.Net.Http.Formatting.xml
 C:\Users\tbendt\Documents\Visual Studio 2013\Projects\IsoComponents\IsoComponents.Tests\obj\Debug\IsoComponents.Tests.dll
 C:\Users\tbendt\Documents\Visual Studio 2013\Projects\IsoComponents\IsoComponents.Tests\obj\Debug\IsoComponents.Tests.pdb

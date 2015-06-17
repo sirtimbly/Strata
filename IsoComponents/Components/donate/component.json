@@ -1,0 +1,18 @@
+﻿{
+
+	"name": "donate",
+	"version": "1",
+	"components": [
+		
+	],
+	"scripts": [
+		"~/bower_components/underscore/underscore.js",
+		"~/bower_components/backbone/backbone.js",
+		"~/js/models/Donation.js",
+		"~/js/frameworks/jquery/plugins/jquery.validate.js"
+	],
+	"styles": [
+
+	],
+	"BackboneModelName":  "Donate"
+}

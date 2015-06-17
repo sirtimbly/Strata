@@ -174,7 +174,6 @@
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
-    <Compile Include="Helpers\UiStratumHelper.cs" />
     <Compile Include="Models\AccountViewModels.cs" />
     <Compile Include="Models\IdentityModels.cs" />
     <Compile Include="Models\ManageViewModels.cs" />
@@ -324,6 +323,10 @@
     <Content Include="bower_components\marionette\license.txt" />
     <Content Include="bower_components\underscore\.gitignore" />
     <Content Include="bower_components\underscore\underscore.js" />
+    <Content Include="Components\donate\initializer.mustache.js" />
+    <Content Include="Components\donate\donate.view.js" />
+    <Content Include="Components\preview\initializer.mustache.js" />
+    <Content Include="Components\preview\preview.view.js" />
     <Content Include="Components\signup\signup.css">
       <DependentUpon>signup.scss</DependentUpon>
     </Content>
@@ -344,6 +347,13 @@
     <Content Include="fonts\glyphicons-halflings-regular.svg" />
     <Content Include="Global.asax" />
     <Content Include="Content\Site.css" />
+    <Content Include="js\models\AdvocateCampaign.js" />
+    <Content Include="js\models\AdvocateCampaignCollection.js" />
+    <Content Include="js\models\AlertModel.js" />
+    <Content Include="js\models\Cause.js" />
+    <Content Include="js\models\Donation.js" />
+    <Content Include="js\models\Transaction.js" />
+    <Content Include="js\models\WizardState.js" />
     <Content Include="Scripts\bootstrap.js" />
     <Content Include="Scripts\bootstrap.min.js" />
     <Content Include="bower.json" />
@@ -450,6 +460,12 @@
       <DependentUpon>signup.css</DependentUpon>
     </Content>
     <Content Include="Components\signup\component.json" />
+    <Content Include="Components\preview\component.json" />
+    <Content Include="Components\preview\preview.mustache" />
+    <Content Include="Components\preview\preview.scss" />
+    <Content Include="Components\donate\component.json" />
+    <Content Include="Components\donate\donate.mustache" />
+    <Content Include="Components\donate\donate.scss" />
     <None Include="Scripts\jquery-1.10.2.intellisense.js" />
     <Content Include="Scripts\jquery-1.10.2.js" />
     <Content Include="Scripts\jquery-1.10.2.min.js" />
@@ -461,6 +477,8 @@
     <Content Include="Scripts\modernizr-2.6.2.js" />
     <Content Include="Scripts\respond.js" />
     <Content Include="Scripts\respond.min.js" />
+    <Content Include="Scripts\underscore.string.js" />
+    <Content Include="Scripts\underscore.templatesettings.js" />
     <Content Include="Scripts\_references.js" />
     <Content Include="Web.config" />
     <Content Include="Web.Debug.config">
