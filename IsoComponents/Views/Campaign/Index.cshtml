@@ -1,0 +1,297 @@
+﻿@model IEnumerable<IsoComponents.Models.AdvocateCampaign>
+
+@{
+    ViewBag.Title = "Index";
+}
+
+<h2>Index</h2>
+
+<p>
+    @Html.ActionLink("Create New", "Create")
+</p>
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.Title)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.TeamName)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.TeamType)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Goal)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Url)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Cause)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.ProductType)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Category)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Headline)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Description)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Image)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.ProfilePhoto)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.ReferralSourceCode)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.SourceCode)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.EventDate)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.HasEventTimeValue)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.EventLocation)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.EventAddress)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.EventAddress2)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.EventCity)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.EventState)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.EventZip)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.ExpectedAttendees)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.ThemeContentId)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.StartDate)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.EndDate)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.DisplayEndDate)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.CalendarEndDate)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Status)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.DateLaunched)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.DateCreated)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.AdvocateCode)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.ConId)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.ConDbId)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Token)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.OwnerName)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.OwnerEmail)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.LastStatusChgDateTime)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.DisplayLastStatusChgDateTime)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.SuspendReason)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Donations)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.DaysLeft)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Total)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.DonorCount)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.DonationCount)
+        </th>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.Title)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.TeamName)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.TeamType)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Goal)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Url)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Cause)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.ProductType)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Category)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Headline)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Description)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Image)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.ProfilePhoto)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.ReferralSourceCode)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.SourceCode)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.EventDate)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.HasEventTimeValue)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.EventLocation)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.EventAddress)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.EventAddress2)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.EventCity)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.EventState)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.EventZip)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.ExpectedAttendees)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.ThemeContentId)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.StartDate)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.EndDate)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.DisplayEndDate)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.CalendarEndDate)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Status)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.DateLaunched)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.DateCreated)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.AdvocateCode)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.ConId)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.ConDbId)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Token)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.OwnerName)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.OwnerEmail)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.LastStatusChgDateTime)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.DisplayLastStatusChgDateTime)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.SuspendReason)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Donations)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.DaysLeft)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Total)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.DonorCount)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.DonationCount)
+        </td>
+        <td>
+            @Html.ActionLink("Edit", "Edit", new { id=item.Id }) |
+            @Html.ActionLink("Details", "Details", new { id=item.Id }) |
+            @Html.ActionLink("Delete", "Delete", new { id=item.Id })
+        </td>
+    </tr>
+}
+
+</table>

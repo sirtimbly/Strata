@@ -7,8 +7,8 @@
     <ProjectGuid>{B6F38005-B186-4CB3-8515-AD12A75A9F61}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>IsoAppComponent</RootNamespace>
-    <AssemblyName>IsoAppComponent</AssemblyName>
+    <RootNamespace>UiStratum</RootNamespace>
+    <AssemblyName>UiStratum</AssemblyName>
     <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
   </PropertyGroup>

@@ -1,6 +1,3 @@
-C:\Users\tbendt\Documents\Visual Studio 2013\Projects\IsoComponents\IsoAppComponent\bin\Release\IsoAppComponent.dll.config
-C:\Users\tbendt\Documents\Visual Studio 2013\Projects\IsoComponents\IsoAppComponent\bin\Release\IsoAppComponent.dll
-C:\Users\tbendt\Documents\Visual Studio 2013\Projects\IsoComponents\IsoAppComponent\bin\Release\IsoAppComponent.pdb
 C:\Users\tbendt\Documents\Visual Studio 2013\Projects\IsoComponents\IsoAppComponent\bin\Release\Antlr3.Runtime.dll
 C:\Users\tbendt\Documents\Visual Studio 2013\Projects\IsoComponents\IsoAppComponent\bin\Release\Microsoft.Web.Infrastructure.dll
 C:\Users\tbendt\Documents\Visual Studio 2013\Projects\IsoComponents\IsoAppComponent\bin\Release\Newtonsoft.Json.dll
@@ -10,5 +7,9 @@ C:\Users\tbendt\Documents\Visual Studio 2013\Projects\IsoComponents\IsoAppCompon
 C:\Users\tbendt\Documents\Visual Studio 2013\Projects\IsoComponents\IsoAppComponent\bin\Release\Antlr3.Runtime.pdb
 C:\Users\tbendt\Documents\Visual Studio 2013\Projects\IsoComponents\IsoAppComponent\bin\Release\Newtonsoft.Json.xml
 C:\Users\tbendt\Documents\Visual Studio 2013\Projects\IsoComponents\IsoAppComponent\bin\Release\System.Web.Optimization.xml
-C:\Users\tbendt\Documents\Visual Studio 2013\Projects\IsoComponents\IsoAppComponent\obj\Release\IsoAppComponent.dll
-C:\Users\tbendt\Documents\Visual Studio 2013\Projects\IsoComponents\IsoAppComponent\obj\Release\IsoAppComponent.pdb
+C:\Users\tbendt\Documents\Visual Studio 2013\Projects\IsoComponents\IsoAppComponent\bin\Release\UiStratum.dll.config
+C:\Users\tbendt\Documents\Visual Studio 2013\Projects\IsoComponents\IsoAppComponent\bin\Release\UiStratum.dll
+C:\Users\tbendt\Documents\Visual Studio 2013\Projects\IsoComponents\IsoAppComponent\bin\Release\UiStratum.pdb
+C:\Users\tbendt\Documents\Visual Studio 2013\Projects\IsoComponents\IsoAppComponent\obj\Release\UiStratum.csprojResolveAssemblyReference.cache
+C:\Users\tbendt\Documents\Visual Studio 2013\Projects\IsoComponents\IsoAppComponent\obj\Release\UiStratum.dll
+C:\Users\tbendt\Documents\Visual Studio 2013\Projects\IsoComponents\IsoAppComponent\obj\Release\UiStratum.pdb

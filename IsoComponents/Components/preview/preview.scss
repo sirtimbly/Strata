@@ -1,4 +1,9 @@
-﻿.campaign-share-preview  {
+﻿@import	"../../bower_components/foundation5-sass/scss/normalize.scss";
+@import "../../bower_components/foundation5-sass/scss/foundation/_functions.scss";
+@import "../../bower_components/foundation5-sass/scss/foundation/_settings.scss";
+@import	"../../bower_components/foundation5-sass/scss/foundation/components/_panels.scss";
+
+.campaign-share-preview  {
 
 	a {
 		 min-width:24px;
@@ -35,6 +40,7 @@
 		 }
 	 }
 
+
 	 .campaign-share-preview {
 		 display:none;
 	 }
@@ -49,8 +55,8 @@
 }
 .campaign-ended {
 	padding: rem-calc(10);
-	background:$ci-red;
-	color:$white;
+	background:red;
+	color:white;
 	text-align:center;
 	.campaign-ended-title {
 		font-size:1.5em;
@@ -66,15 +72,15 @@
 		}
 	} 
 }
-
+ 
 .campaign-complete {
 	text-align:center;
-	color:$white;
+	color:white;
 	z-index:1000;
 	
 	p {
 		font-size:130%;
-		color:$white;
+		color:white;
 		margin:rem-calc(20);
 	}
 
@@ -94,7 +100,7 @@
 		
 	.complete-message-header {
 		font-weight:bold;
-		color:$white;
+		color:white;
 		font-size:150%;
 	}
 }

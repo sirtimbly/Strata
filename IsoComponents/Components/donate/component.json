@@ -12,7 +12,7 @@
 		"~/js/frameworks/jquery/plugins/jquery.validate.js"
 	],
 	"styles": [
-
+		"~/Components/donate/donate.css"
 	],
 	"BackboneModelName":  "Donate"
 }

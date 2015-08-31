@@ -2,10 +2,11 @@
 
 	"name": "banner",
 	"version": "1",
-	"components": [ ],
+	"components": [  ],
 	"scripts": [
-		"~/bower_components/underscore/underscore.js",
-		"~/bower_components/backbone/backbone.js"
+		"/bower_components/underscore/underscore.js",
+		"/bower_components/backbone/backbone.js",
+		"/Components/banner/banner.view.js"
 	],
 	"styles": [ 
 		

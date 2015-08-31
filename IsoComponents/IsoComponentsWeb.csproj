@@ -39,6 +39,9 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="Microsoft.Azure.Documents.Client">
+      <HintPath>..\packages\Microsoft.Azure.DocumentDB.1.1.0\lib\net40\Microsoft.Azure.Documents.Client.dll</HintPath>
+    </Reference>
     <Reference Include="Microsoft.CSharp" />
     <Reference Include="System" />
     <Reference Include="System.Data" />
@@ -169,13 +172,17 @@
     <Compile Include="App_Start\Startup.Auth.cs" />
     <Compile Include="App_Start\WebApiConfig.cs" />
     <Compile Include="Controllers\AccountController.cs" />
+    <Compile Include="Controllers\CampaignController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\ManageController.cs" />
+    <Compile Include="DocumentDbRepository.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
     <Compile Include="Models\AccountViewModels.cs" />
+    <Compile Include="Models\Cause.cs" />
     <Compile Include="Models\IdentityModels.cs" />
+    <Compile Include="Models\Campaign.cs" />
     <Compile Include="Models\ManageViewModels.cs" />
     <Compile Include="Models\UiViewModels.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -230,6 +237,12 @@
     <Content Include="bower_components\backbone\backbone.js" />
     <Content Include="bower_components\backbone\index.html" />
     <Content Include="bower_components\backbone\index.js" />
+    <Content Include="bower_components\foundation5-sass\scss\normalize.css">
+      <DependentUpon>normalize.scss</DependentUpon>
+    </Content>
+    <Content Include="bower_components\foundation5-sass\scss\normalize.min.css">
+      <DependentUpon>normalize.css</DependentUpon>
+    </Content>
     <Content Include="bower_components\jquery\dist\jquery.js" />
     <Content Include="bower_components\jquery\dist\jquery.min.js" />
     <Content Include="bower_components\jquery\MIT-LICENSE.txt" />
@@ -323,9 +336,21 @@
     <Content Include="bower_components\marionette\license.txt" />
     <Content Include="bower_components\underscore\.gitignore" />
     <Content Include="bower_components\underscore\underscore.js" />
+    <Content Include="Components\donate\donate.css">
+      <DependentUpon>donate.scss</DependentUpon>
+    </Content>
+    <Content Include="Components\donate\donate.min.css">
+      <DependentUpon>donate.css</DependentUpon>
+    </Content>
     <Content Include="Components\donate\initializer.mustache.js" />
     <Content Include="Components\donate\donate.view.js" />
     <Content Include="Components\preview\initializer.mustache.js" />
+    <Content Include="Components\preview\preview.css">
+      <DependentUpon>preview.scss</DependentUpon>
+    </Content>
+    <Content Include="Components\preview\preview.min.css">
+      <DependentUpon>preview.css</DependentUpon>
+    </Content>
     <Content Include="Components\preview\preview.view.js" />
     <Content Include="Components\signup\signup.css">
       <DependentUpon>signup.scss</DependentUpon>
@@ -466,6 +491,15 @@
     <Content Include="Components\donate\component.json" />
     <Content Include="Components\donate\donate.mustache" />
     <Content Include="Components\donate\donate.scss" />
+    <Content Include="Components\donate\donate.css.map">
+      <DependentUpon>donate.css</DependentUpon>
+    </Content>
+    <Content Include="Components\preview\preview.css.map">
+      <DependentUpon>preview.css</DependentUpon>
+    </Content>
+    <Content Include="bower_components\foundation5-sass\scss\normalize.css.map">
+      <DependentUpon>normalize.css</DependentUpon>
+    </Content>
     <None Include="Scripts\jquery-1.10.2.intellisense.js" />
     <Content Include="Scripts\jquery-1.10.2.js" />
     <Content Include="Scripts\jquery-1.10.2.min.js" />
@@ -517,6 +551,8 @@
     <Content Include="Views\Manage\VerifyPhoneNumber.cshtml" />
     <Content Include="Views\Shared\Lockout.cshtml" />
     <Content Include="Views\Shared\_LoginPartial.cshtml" />
+    <Content Include="Views\Campaign\Index.cshtml" />
+    <Content Include="Views\Campaign\Edit.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

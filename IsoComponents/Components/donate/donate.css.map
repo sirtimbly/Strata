@@ -1,0 +1,10 @@
+﻿{
+	"version": 3,
+	"file": "donate.css",
+	"sources": [
+		"donate.scss"
+	],
+	"sourcesContent": [],
+	"mappings": "AAAA,YAAY,AAAC,CACZ,MAAM,CAAE,cAAe,CADV,AAId,6BAA6B,AAAC,CAC7B,MAAM,CAAE,aAAc,CACtB,UAAU,CAAE,IAAK,CACjB,OAAO,CAAC,GAAI,CAHkB",
+	"names": []
+}

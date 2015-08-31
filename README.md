@@ -4,6 +4,16 @@ A UI Component System for isomorphic rendering in ASP.Net.
 
 ---
 
+## Project Strata's Goals
+
+0. Organize markup, styles, and scripts together in a single directory, per user interface component.
+0. Share rendering code between browser and server.
+0. Provide tools for progressively loading scripts and styles.
+0. Allow components to nest and depend on each other.
+0. Bundle and cache intelligently.
+0. Convention over configuration. 
+0. Be flexible enough for implementing other template syntax and JS frameworks in the future. (Backbone+Mustache is the reference implementation, though.)
+
 ## Purpose
 
 To organize related code files together in a 'components' directory for discrete sections of user interface functionality. This will make code organization easier across a large javascript drive application. Additionally I want to include (render) these components in a web page with all necessary dependencies resolved and compiled. And to enable progressive enhancement as well as faster performance we have usable HTML delivered to the client without needing to run client-side templating logic before any usable UI is rendered.
@@ -21,7 +31,21 @@ Currently Strata uses the Mustache template language because of it's wide adopti
 
 Also, it's convenient for me because my default use case for Strata is with Backbone and Underscore components using the mustache data templating syntax.
 
-## Component.json file example
+## Definition of A Stratum
+
+It's my name for a user interface component. 
+
+A stratum consists of 
+
+- Markup
+- JS Code
+- JS Dependencies
+- Stylesheets
+- View Initialization Logic
+
+
+
+### Component.json file example
 
 ```
 {

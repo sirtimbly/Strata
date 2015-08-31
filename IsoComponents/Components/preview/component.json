@@ -19,7 +19,8 @@
 		"~/js/frameworks/foundation/foundation.dropdown.js"
 	],
 	"styles": [
-		""
+		"~/bower_components/foundation5-sass/scss/normalize.css",
+		"~/components/preview/preview.css"
 	],
 	"BackboneModelName":  "AdvocateCampaign"
 }

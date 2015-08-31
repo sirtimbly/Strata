@@ -7,6 +7,7 @@ using System.Text.RegularExpressions;
 using System.Web;
 using System.Web.Optimization;
 using Newtonsoft.Json;
+using Newtonsoft.Json.Serialization;
 using Nustache.Core;
 using UiStratum.UiStratumTypes;
 
@@ -60,6 +61,13 @@ namespace UiStratum
             get
             {
                 return _dependentScriptPaths;
+            }
+        }
+        public List<string> DependentStylePaths
+        {
+            get
+            {
+                return _dependentStylePaths;
             }
         }
         public Dictionary<string, string> DependentTemplatePaths
@@ -150,12 +158,21 @@ namespace UiStratum
 
         public string RenderTemplates()
         {
-            return RenderComponentTemplate(_templateId, _templateFilePath);
+            return RenderAllTemplates();
+            //return RenderComponentTemplate(_templateId, _templateFilePath);
         }
 
         public string RenderStyles()
         {
-            throw new NotImplementedException();
+            //todo: add ability to render styles inline to save network requests
+            StringBuilder sb = new StringBuilder();
+            foreach (var item in _dependentStylePaths)
+            {
+                string mappedPath = item.Replace("~/", "/");
+                sb.AppendFormat(@"<link href=""{0}"" rel=""stylesheet""/>", mappedPath);
+                sb.AppendLine();
+            }
+            return String.Format(sb.ToString());
         }
 
         public string RenderComponentHtml(bool includeTemplates, bool includeScriptTag, bool includeViewInit)
@@ -253,7 +270,11 @@ namespace UiStratum
                     templateId = _templateId,
                     componentName = _componentName,
                     modelName = bbModelName,
-                    modelData = JsonConvert.SerializeObject(_modelData)
+                    modelData = JsonConvert.SerializeObject(_modelData, new JsonSerializerSettings
+                    {
+                        ReferenceLoopHandling = ReferenceLoopHandling.Ignore,
+                        ContractResolver = new CamelCasePropertyNamesContractResolver() //TODO: make this configurable
+                    })
                 };
 
                 renderedHtml.AppendFormat(_t.FormatableStartScript, _t.JsType, "");
@@ -280,7 +301,8 @@ namespace UiStratum
                 StringBuilder sb = new StringBuilder();
                 foreach (var item in _dependentScriptPaths)
                 {
-                    sb.AppendFormat(scriptTag, HttpUtility.HtmlAttributeEncode(item));
+                    string mappedPath = item.Replace("~/", "/");
+                    sb.AppendFormat(scriptTag, HttpUtility.HtmlAttributeEncode(mappedPath));
                 }
                 return sb.ToString();
             }
@@ -345,9 +367,14 @@ namespace UiStratum
             }
 
 
+            //TODO: determine why the ~/ path is not being resolved in debug mode, current workaround is: include view.js file in component.json file 
             //then add the [component].view.js file as an unresolved path
-            _dependentScriptPaths.Add(_t.RootPath + _componentName + "/" + _componentName + _t.ViewSuffix);
+            //_dependentScriptPaths.Add(_t.RootPath + _componentName + "/" + _componentName + _t.ViewSuffix);
             flattenedTemplates.Add(_componentName, _templateFilePath);
+
+            _dependentStylePaths.AddRange(_dependencies.Styles);
+
+
 
             if (!_dependencies.Components.Any())
             {
@@ -358,15 +385,21 @@ namespace UiStratum
             {
                 var nestedComponent = new UiStratum(name);
                 _dependentScriptPaths.AddRange(nestedComponent.DependentScriptPaths);
+                _dependentStylePaths.AddRange(nestedComponent.DependentStylePaths);
                 flattenedTemplates.Add(name, nestedComponent.TemplatePath);
                 foreach (var item in nestedComponent.DependentTemplatePaths)
                 {
-                    flattenedTemplates.Add(item.Key, item.Value);
+                    if (!flattenedTemplates.ContainsKey(item.Key))
+                    {
+                        flattenedTemplates.Add(item.Key, item.Value);
+                    }
                 }
 
             }
             _dependentScriptPaths = _dependentScriptPaths.Distinct().ToList();
             //flattenedTemplates = flattenedTemplates.Distinct().ToList();
+
+
 
             _dependentTemplatePaths = flattenedTemplates;
 

@@ -7,15 +7,15 @@ using UiStratum.UiStratumTypes;
 
 namespace UiStratum
 {
-	interface IUiStratum
-	{
+    interface IUiStratum
+    {
 
-	
-		string RenderAll();
-		string RenderHtml();
-		string RenderScripts();
-		string RenderStyles();
-		string RenderTemplates();
 
-	}
+        string RenderAll();
+        string RenderHtml();
+        string RenderScripts();
+        string RenderStyles();
+        string RenderTemplates();
+
+    }
 }

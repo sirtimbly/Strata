@@ -19,8 +19,9 @@ namespace UiStratum.Helpers
         /// <param name="data"></param>
         /// <param name="withScripts"></param>
         /// <returns></returns>
-        public static IHtmlString Stratum<T>(string componentName, string rootPath = "", string myId = "", object data = null, bool withScripts = false) where T : UiStratumType
+        public static IHtmlString Stratum<T>(string componentName, string rootPath = "", string myId = "", object data = null, bool withScripts = false, bool withStyles = true, bool withTemplates = true, bool withViewInit = false) where T : UiStratumType
         {
+
             UiStratumType newType = (T)Activator.CreateInstance(typeof(T));
             UiStratum component = new UiStratum(componentName, rootPath, myId, data, newType);
             List<string> loaded = new List<string>();
@@ -32,7 +33,13 @@ namespace UiStratum.Helpers
             }
             loaded.Add(componentName);
             HttpContext.Current.Application[pageKey] = loaded;
-            return new HtmlString(component.RenderComponentHtml(true, withScripts, withScripts));
+            string output = "";
+            if (withStyles)
+            {
+                output += component.RenderStyles();
+            }
+            output += component.RenderComponentHtml(withTemplates, withScripts, withViewInit);
+            return new HtmlString(output);
         }
 
         /// <summary>
@@ -79,6 +86,32 @@ namespace UiStratum.Helpers
             scripts.Append(RenderBundle<ScriptBundle>(bundleName, component.ListBundleScripts()).ToString());
             scripts.Append(component.RenderBackboneViewModel());
             return new HtmlString(scripts.ToString());
+        }
+
+        /// <summary>
+        /// Renders a specific set of scripts as a bundle for one specific component
+        /// </summary>
+        /// <param name="componentName"></param>
+        /// <param name="bundleName"></param>
+        /// <returns></returns>
+        public static IHtmlString StratumStyles(string componentName, string rootPath = "", string bundleName = null)
+        {
+            UiStratum component = new UiStratum(componentName, rootPath, "", null, new UiStratumTypes.BackboneMustache());
+
+            return new HtmlString(component.RenderStyles());
+        }
+
+        /// <summary>
+        /// Renders templates
+        /// </summary>
+        /// <param name="componentName"></param>
+        /// <param name="bundleName"></param>
+        /// <returns></returns>
+        public static IHtmlString StratumTemplates(string componentName, string rootPath = "")
+        {
+            UiStratum component = new UiStratum(componentName, rootPath, "", null, new UiStratumTypes.BackboneMustache());
+
+            return new HtmlString(component.RenderTemplates());
         }
 
 

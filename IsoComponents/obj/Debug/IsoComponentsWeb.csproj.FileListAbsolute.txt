@@ -5,7 +5,6 @@ C:\Users\tbendt\Documents\Visual Studio 2013\Projects\IsoComponents\IsoComponent
 C:\Users\tbendt\Documents\Visual Studio 2013\Projects\IsoComponents\IsoComponents\bin\Antlr3.Runtime.dll
 C:\Users\tbendt\Documents\Visual Studio 2013\Projects\IsoComponents\IsoComponents\bin\EntityFramework.dll
 C:\Users\tbendt\Documents\Visual Studio 2013\Projects\IsoComponents\IsoComponents\bin\EntityFramework.SqlServer.dll
-C:\Users\tbendt\Documents\Visual Studio 2013\Projects\IsoComponents\IsoComponents\bin\IsoAppComponent.dll
 C:\Users\tbendt\Documents\Visual Studio 2013\Projects\IsoComponents\IsoComponents\bin\Microsoft.AspNet.Identity.Core.dll
 C:\Users\tbendt\Documents\Visual Studio 2013\Projects\IsoComponents\IsoComponents\bin\Microsoft.AspNet.Identity.EntityFramework.dll
 C:\Users\tbendt\Documents\Visual Studio 2013\Projects\IsoComponents\IsoComponents\bin\Microsoft.AspNet.Identity.Owin.dll
@@ -33,7 +32,6 @@ C:\Users\tbendt\Documents\Visual Studio 2013\Projects\IsoComponents\IsoComponent
 C:\Users\tbendt\Documents\Visual Studio 2013\Projects\IsoComponents\IsoComponents\bin\System.Web.WebPages.Razor.dll
 C:\Users\tbendt\Documents\Visual Studio 2013\Projects\IsoComponents\IsoComponents\bin\WebGrease.dll
 C:\Users\tbendt\Documents\Visual Studio 2013\Projects\IsoComponents\IsoComponents\bin\Nustache.Core.dll
-C:\Users\tbendt\Documents\Visual Studio 2013\Projects\IsoComponents\IsoComponents\bin\IsoAppComponent.pdb
 C:\Users\tbendt\Documents\Visual Studio 2013\Projects\IsoComponents\IsoComponents\bin\System.Web.Helpers.xml
 C:\Users\tbendt\Documents\Visual Studio 2013\Projects\IsoComponents\IsoComponents\bin\System.Web.Mvc.xml
 C:\Users\tbendt\Documents\Visual Studio 2013\Projects\IsoComponents\IsoComponents\bin\System.Web.Optimization.xml
@@ -62,3 +60,7 @@ C:\Users\tbendt\Documents\Visual Studio 2013\Projects\IsoComponents\IsoComponent
 C:\Users\tbendt\Documents\Visual Studio 2013\Projects\IsoComponents\IsoComponents\bin\Microsoft.Owin.Security.MicrosoftAccount.xml
 C:\Users\tbendt\Documents\Visual Studio 2013\Projects\IsoComponents\IsoComponents\obj\Debug\IsoComponents.dll
 C:\Users\tbendt\Documents\Visual Studio 2013\Projects\IsoComponents\IsoComponents\obj\Debug\IsoComponents.pdb
+C:\Users\tbendt\Documents\Visual Studio 2013\Projects\IsoComponents\IsoComponents\bin\Microsoft.Azure.Documents.Client.dll
+C:\Users\tbendt\Documents\Visual Studio 2013\Projects\IsoComponents\IsoComponents\bin\UiStratum.dll
+C:\Users\tbendt\Documents\Visual Studio 2013\Projects\IsoComponents\IsoComponents\bin\UiStratum.pdb
+C:\Users\tbendt\Documents\Visual Studio 2013\Projects\IsoComponents\IsoComponents\bin\Microsoft.Azure.Documents.Client.xml
